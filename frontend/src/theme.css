@@ -1,0 +1,169 @@
+/* Creative Theme - moderne et élégant */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  /* Palette douce cuisine: orange, crème, gris */
+  --bg-start: #fff6ef;   /* crème pêche très clair */
+  --bg-end: #f7f7f8;     /* quasi-blanc, léger gris */
+  --primary: #ff7f32;    /* orange doux */
+  --primary-700: #e96a1d;/* orange un peu plus soutenu */
+  --secondary: #ffd7a8;  /* abricot/crème pour boutons légers */
+  --text: #2b2b2b;       /* gris très foncé pour lisibilité */
+  --muted: #6b7280;      /* gris moyen */
+  --border: rgba(0,0,0,0.08);
+  --surface: rgba(255,255,255,0.85); /* surface claire/translucide */
+  --shadow: 0 8px 22px rgba(0,0,0,0.12);
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text);
+  /* Fond clair avec touches orangées et crème */
+  background:
+    radial-gradient(900px 400px at 15% 0%, rgba(255, 127, 50, 0.10), transparent 60%),
+    radial-gradient(700px 300px at 85% 10%, rgba(255, 215, 168, 0.18), transparent 60%),
+    linear-gradient(120deg, var(--bg-start), var(--bg-end));
+}
+
+/* Layout container */
+.container {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+  backdrop-filter: blur(8px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.75));
+  border-bottom: 1px solid var(--border);
+}
+.navbar .grow { flex: 1; }
+.navbar .brand {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--primary-700);
+}
+
+/* Liens */
+.nav-link {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: all .2s ease;
+}
+.nav-link:hover {
+  color: var(--primary-700);
+  background: var(--surface);
+}
+
+/* Boutons */
+button, .btn {
+  appearance: none;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 600;
+  color: #2b2b2b;
+  background: var(--secondary);     /* bouton par défaut: abricot/crème */
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform .06s ease, filter .2s ease, background .2s ease;
+}
+button:hover, .btn:hover { filter: brightness(1.04); }
+button:active, .btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--primary);       /* bouton d’action: orange doux */
+  color: white;
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+/* Cartes + panneaux */
+.card, .panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.85));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 18px;
+}
+
+/* Headings */
+h1, h2, h3 {
+  margin: 8px 0 14px;
+  line-height: 1.2;
+}
+h1 { font-size: 28px; }
+h2 { font-size: 22px; color: var(--text); }
+h3 { font-size: 18px; color: var(--muted); }
+
+/* Forms */
+input, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 6px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.07);
+  color: var(--text);
+  outline: none;
+}
+input::placeholder, textarea::placeholder {
+  color: #9aa3b2;
+}
+label {
+  display: block;
+  margin: 8px 0;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Images */
+img {
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* Alerts (douce) */
+.alert {
+  color: #7a2e2e;
+  background: rgba(255, 102, 102, 0.12);
+  border: 1px solid rgba(255, 102, 102, 0.22);
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+/* Utilities */
+.row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
